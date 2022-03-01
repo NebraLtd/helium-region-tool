@@ -1,0 +1,41 @@
+.btn-primary {
+    background-color: #03a9f4;
+    border-color: #03a9f4;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #016592;
+}
+
+.frequency-search {
+    position: relative;
+    width: auto;
+    height: 50px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.frequency-search h2 {
+    margin-bottom: 0;
+}
+
+.select-help {
+    display: flex;
+    flex-direction: row;
+}
+
+select {
+    margin-right: 20px;
+}
+
+.submit-button {
+    margin-left: 20px !important;
+}
+
+.results {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
