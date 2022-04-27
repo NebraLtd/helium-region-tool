@@ -7,7 +7,6 @@
 
 google.charts.load('current', {
     'packages': ['geochart'],
-    // 'mapsApiKey': 'AIzaSyCS9O_RQdNa2KauZCVQgYCUQltdPEayNCc'
 });
 
 // Google Sheets Data
