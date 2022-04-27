@@ -90,8 +90,7 @@
           </select>
 
           <div class="d-grid">
-            <button class="btn btn-lg btn-primary my-2" type="submit" onclick="frequencyFinder();"
-              data-bs-toggle="tooltip" data-bs-placement="right" title="Show available frequencies in your region"><i
+            <button class="btn btn-lg btn-primary my-2" type="submit" onclick="frequencyFinder();"><i
                 class="fa-duotone fa-magnifying-glass"></i> Search</button>
           </div>
 
@@ -110,29 +109,32 @@
                 <li id="region2Value" class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="right"
                   title="Insert region 2 helper text here"></li>
                 <li id="region3Value" class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="right"
-                  title="Insert region 3 helper text here""></li>
+                  title="Insert region 3 helper text here"></li>
               </ul>
             </div>
 
           </div>
 
           <ul class=" list-group list-group-flush">
-                <li class="list-group-item" id="regionString"></li>
-              </ul>
+            <li class="list-group-item" id="regionString"></li>
+          </ul>
 
-              <div class="d-grid">
-                <button id="purchase" class="btn btn-md btn-success mb-2" type="submit">Buy now</button>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="col-sm-12 col-md-8 col-lg-9">
-            <div id="regions_div" style="width: 100%; height: 500px"></div>
+          <div class="d-grid">
+            <a href="https://www.nebra.com/products/nebra-hnt-indoor-hotspot-miner-rock-pi-version" target="_blank" id="purchase" class="btn btn-lg btn-success mb-2" type="submit" data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              title="Visit the Nebra store to purchase the correct miner for your region">Purchase Miner <i
+                class="fa-solid fa-arrow-right"></i> </a>
           </div>
 
         </div>
+
+      </div>
+
+      <div class="col-sm-12 col-md-8 col-lg-9">
+        <div id="regions_div" style="width: 100%; height: 500px"></div>
+      </div>
+
+    </div>
 
   </main>
 
@@ -143,7 +145,8 @@
           <div class="row">
             <div class="col-sm-12">
               <h5>This website uses data from the following <a
-                  href="https://github.com/gradoj/hplans/blob/main/regions.csv" target="_blank">Region Parameters</a>. While every attempt has been made to
+                  href="https://github.com/gradoj/hplans/blob/main/regions.csv" target="_blank">Region Parameters</a>.
+                While every attempt has been made to
                 ensure this data is correct, please refer to your local regulations to confirm.</h5>
               <h5><a href="https://twitter.com/nebraltd" target="_blank">@NebraLtd</a> &copy; NebraLtd. 2022</h5>
               <br />

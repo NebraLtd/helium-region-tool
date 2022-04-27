@@ -10,17 +10,18 @@ google.charts.load('current', {
     // 'mapsApiKey': 'AIzaSyCS9O_RQdNa2KauZCVQgYCUQltdPEayNCc'
 });
 
-// Google Sheets Data - Option 1
+// Google Sheets Data
 google.charts.setOnLoadCallback(regionSwap);
 
 function regionSwap() {
-    var region = 'Q'; // Q, R or S
+    var region = 'Q';
+    // var region2 = 'R';
+    // var region3 = 'S';
     drawRegionsMap(region);
 }
 
 // Query sheets data and select columns
 function drawRegionsMap(region) {
-    // var queryString = encodeURIComponent('select' + 'D,' + region);
     var countryColumn = 'D';
     var query = new google.visualization.Query(
         'https://docs.google.com/spreadsheets/d/1YfyT89RCuJyqW88Oiglk2vloXr8wxUWB2TiE3nm8AFY/edit?usp=sharing&tq=SELECT' + ' ' + countryColumn + ',' + region); // Google Sheet

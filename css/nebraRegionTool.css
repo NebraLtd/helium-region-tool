@@ -20,6 +20,18 @@ ul li {
 .btn-primary:hover,
 .btn-primary:focus {
     background-color: #016592;
+    border-color: #03a9f4;
+}
+
+.btn-success {
+    background-color: #2ECC71;
+    border-color: #2ECC71;
+}
+
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #27ae60;
+    border-color: #2ECC71;
 }
 
 .submit-button {
@@ -47,7 +59,8 @@ ul li {
     align-items: center;
 }
 
-.fa-location-dot, .fa-earth-europe {
+.fa-location-dot,
+.fa-earth-europe {
     color: #03a9f4;
     ;
 }
@@ -76,4 +89,4 @@ footer {
     footer {
         position: relative;
     }
-  }
+}
