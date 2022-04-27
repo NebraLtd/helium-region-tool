@@ -7,16 +7,23 @@
 
 google.charts.load('current', {
     'packages': ['geochart'],
-    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+    // 'mapsApiKey': 'AIzaSyCS9O_RQdNa2KauZCVQgYCUQltdPEayNCc'
 });
-google.charts.setOnLoadCallback(drawRegionsMap);
 
-// Query Google Sheets data and select columns
-function drawRegionsMap() {
-    var queryString = encodeURIComponent('SELECT D, G');
+// Google Sheets Data - Option 1
+google.charts.setOnLoadCallback(regionSwap);
+
+function regionSwap() {
+    var region = 'Q'; // Q, R or S
+    drawRegionsMap(region);
+}
+
+// Query sheets data and select columns
+function drawRegionsMap(region) {
+    // var queryString = encodeURIComponent('select' + 'D,' + region);
+    var countryColumn = 'D';
     var query = new google.visualization.Query(
-        'https://docs.google.com/spreadsheets/d/1YfyT89RCuJyqW88Oiglk2vloXr8wxUWB2TiE3nm8AFY/edit?usp=sharing&headers=1&tq=' +
-        queryString);
+        'https://docs.google.com/spreadsheets/d/1YfyT89RCuJyqW88Oiglk2vloXr8wxUWB2TiE3nm8AFY/edit?usp=sharing&tq=SELECT' + ' ' + countryColumn + ',' + region); // Google Sheet
     query.send(handleQueryResponse);
 }
 
@@ -29,11 +36,12 @@ function handleQueryResponse(response) {
 
     // Customise options
     var options = {
+
         colorAxis: {
             colors: ['#015175', '#012536', '#02A8F5']
         },
         backgroundColor: 'transparent',
-        datalessRegionColor: 'white',
+        datalessRegionColor: '#eee',
         defaultColor: '#03a9f4',
 
         tooltip: {
@@ -42,7 +50,7 @@ function handleQueryResponse(response) {
                 fontSize: '20'
             },
             showColorCode: true
-        }
+        },
     };
 
     // Parse data
@@ -51,19 +59,20 @@ function handleQueryResponse(response) {
     // Apply data to HTML element
     var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
 
-    // Test - Visual value change on click
-    // google.visualization.events.addListener(chart, 'select', function () {
-    //     for (var i = 0; i < data.getNumberOfRows(); i++) {
-    //         if (i === chart.getSelection()[0].row) {
-    //             data.setValue(i, 1, 100);
-    //             console.log(i + 2);
-    //         } else {
-    //             data.setValue(i, 1, 0);
-    //         }
-    //     }
-    //     chart.draw(data, options);
-    // });
-
     // Render
     chart.draw(data, options);
+
 }
+
+// Test - Visual value change on click
+// google.visualization.events.addListener(chart, 'select', function () {
+//     for (var i = 0; i < data.getNumberOfRows(); i++) {
+//         if (i === chart.getSelection()[0].row) {
+//             data.setValue(i, 1, 100);
+//             console.log(i + 2);
+//         } else {
+//             data.setValue(i, 1, 0);
+//         }
+//     }
+//     chart.draw(data, options);
+// });

@@ -10,6 +10,7 @@
     "type": "module",
     "dependencies": {
         "datamaps": "^0.5.9",
-        "jquery": "^3.6.0"
+        "jquery": "^3.6.0",
+        "jquery-csv": "^1.0.21"
     }
 }

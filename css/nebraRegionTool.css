@@ -1,35 +1,42 @@
+h1 {
+    font-size: 1.2em;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
 .btn-primary {
     background-color: #03a9f4;
     border-color: #03a9f4;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: #016592;
-}
-
-.frequency-search {
-    position: relative;
-    width: auto;
-    height: 50px;
-    justify-content: space-between;
-    display: flex;
-}
-
-.frequency-search h2 {
-    margin-bottom: 0;
-}
-
-.select-help {
-    display: flex;
-    flex-direction: row;
-}
-
-select {
-    margin-right: 20px;
 }
 
 .submit-button {
     margin-left: 20px !important;
+}
+
+.btn-group {
+    width: 100%;
+    max-height: 50px;
+}
+
+.card {
+    height: 100%;
+}
+
+.card-body {
+    padding: 0;
 }
 
 .results {
@@ -39,3 +46,34 @@ select {
     flex-direction: column;
     align-items: center;
 }
+
+.fa-location-dot, .fa-earth-europe {
+    color: #03a9f4;
+    ;
+}
+
+.custom-select {
+    width: 100%;
+    height: 50px;
+    padding-left: 10px;
+}
+
+#frequencyResults h1 {
+    font-size: 1.5em;
+}
+
+#regionString {
+    color: red;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+@media only screen and (max-width: 992px) {
+    footer {
+        position: relative;
+    }
+  }
