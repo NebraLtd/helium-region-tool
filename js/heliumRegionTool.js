@@ -10,6 +10,7 @@ $(function () {
     $('#region2Value').hide();
     $('#region3Value').hide();
     $('#purchase').hide();
+    $('#regionNotes').hide()
 
     // Set default country
     $('select option[value="GB"]').attr("selected", true);
@@ -92,6 +93,7 @@ function frequencyFinder() {
                     region1 = dataObject[i]['Region 1 Frequency'];
                     region2 = dataObject[i]['Region 2 Frequency'];
                     region3 = dataObject[i]['Region 3 Frequency'];
+                    regionNotes = dataObject[i]['Notes'];
 
                     countryName = dataObject[i].Country;
                     break;
@@ -119,7 +121,6 @@ function frequencyFinder() {
                 $('#region3Value').hide();
             }
 
-
             // Region 1
             if (region1.length === 0) {
 
@@ -137,7 +138,7 @@ function frequencyFinder() {
                 $('#frequencyResults .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region1Value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region 1 Frequency: <strong>" + region1 + "MHz</strong>";
+                document.getElementById("region1Value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region Frequency: <strong>" + region1 + "MHz</strong>";
             }
 
             // Region 2
@@ -154,7 +155,7 @@ function frequencyFinder() {
                 $('#frequencyResults .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region2Value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region 2 Frequency: <strong>" + region2 + "MHz</strong>";
+                document.getElementById("region2Value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 2 Frequency: <strong>" + region2 + "MHz</strong></small>";
             }
 
             // Region 3
@@ -171,7 +172,7 @@ function frequencyFinder() {
                 $('#frequencyResults .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region3Value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region 3 Frequency: <strong>" + region3 + "MHz</strong>";
+                document.getElementById("region3Value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 3 Frequency: <strong>" + region3 + "MHz</strong></small>";
             }
 
             // Update buy button with region specific URL
@@ -184,6 +185,12 @@ function frequencyFinder() {
             } else if (region1 == 470) {
                 $('#purchase').attr("href", "hhttps://www.nebra.com/products/nebra-hnt-indoor-hotspot-miner-rock-pi-version?variant=39695017967702")
             }
+
+            // Add Region Notes
+            console.log('Region notes', regionNotes);
+            if (regionNotes) {
+                $('#regionNotes').show().html('<p><strong>Notes:</strong> ' + regionNotes + '</p>');
+            } else $('#regionNotes').hide();
         },
         dataType: "text",
         complete: function () {},

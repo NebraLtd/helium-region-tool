@@ -67,20 +67,6 @@
 
       <div class="card col-sm-12 col-md-4 col-lg-3 p-4">
 
-        <!-- <p><strong>Step 1:</strong> Choose Region</p>
-
-        <div class="card-body">
-
-          <div class="btn-group" role="group" aria-label="Basic example">
-            <button id="region1Swap" type="button" class="btn btn-sm btn-secondary region-swap active">Region 1</button>
-            <button id="region2Swap" type="button" class="btn btn-sm btn-secondary region-swap">Region 2</button>
-            <button id="region3Swap" type="button" class="btn btn-sm btn-secondary region-swap">Region 3</button>
-          </div>
-
-          <h2 id="result"></h2>
-
-        </div> -->
-
         <h1><i class="fa-solid fa-earth-europe"></i> Select Region</h1>
 
         <div class="card-body">
@@ -99,13 +85,16 @@
         <div id="frequencyResults">
 
           <div class="card-body">
+
             <!-- Error Message -->
             <div class="alert alert-danger mt-2" id="regionString" role="alert"></div>
             <span id="#regionStringHelper"></span>
             <div class="card mt-2">
+
+              <div id="region1Value" class="card-header" data-bs-toggle="tooltip" data-bs-placement="right"
+              title="Insert region helper text here"></div>
+
               <ul class="list-group list-group-flush d-none">
-                <li id="region1Value" class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="right"
-                  title="Insert region 1 helper text here"></li>
                 <li id="region2Value" class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="right"
                   title="Insert region 2 helper text here"></li>
                 <li id="region3Value" class="list-group-item" data-bs-toggle="tooltip" data-bs-placement="right"
@@ -115,9 +104,11 @@
 
           </div>
 
-          <ul class=" list-group list-group-flush">
+          <ul class="list-group list-group-flush">
             <li class="list-group-item" id="regionString"></li>
           </ul>
+
+          <span id="regionNotes" class="my-2"></span>
 
           <div class="d-grid">
             <a href="https://www.nebra.com/products/nebra-hnt-indoor-hotspot-miner-rock-pi-version" target="_blank" id="purchase" class="btn btn-lg btn-success mb-2" type="submit" data-bs-toggle="tooltip"
@@ -144,11 +135,11 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-12">
-              <h5>This website uses data from the following <a
+              <p>This website uses data from the following <a
                   href="https://github.com/gradoj/hplans/blob/main/regions.csv" target="_blank">Region Parameters</a>.
                 While every attempt has been made to
-                ensure this data is correct, please refer to your local regulations to confirm.</h5>
-              <h5><a href="https://twitter.com/nebraltd" target="_blank">@NebraLtd</a> &copy; NebraLtd. 2022</h5>
+                ensure this data is correct, please refer to your local regulations to confirm.</p>
+              <p><a href="https://twitter.com/nebraltd" target="_blank">@NebraLtd</a> &copy; NebraLtd. 2022</p>
               <br />
             </div>
           </div>

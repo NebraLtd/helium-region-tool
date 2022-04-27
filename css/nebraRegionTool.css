@@ -8,10 +8,6 @@ ul {
     list-style-type: none;
 }
 
-ul li {
-    margin-bottom: 10px;
-}
-
 .btn-primary {
     background-color: #03a9f4;
     border-color: #03a9f4;
@@ -51,6 +47,14 @@ ul li {
     padding: 0;
 }
 
+.card-header {
+    padding: 20px;
+}
+
+.list-group-item {
+    padding: 0.5rem 1rem
+}
+
 .results {
     position: relative;
     display: flex;
@@ -85,7 +89,7 @@ footer {
     bottom: 0;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
     footer {
         position: relative;
     }
