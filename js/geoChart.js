@@ -14,8 +14,6 @@ google.charts.setOnLoadCallback(regionSwap);
 
 function regionSwap() {
     var region = 'Q';
-    // var region2 = 'R';
-    // var region3 = 'S';
     drawRegionsMap(region);
 }
 
@@ -63,16 +61,3 @@ function handleQueryResponse(response) {
     chart.draw(data, options);
 
 }
-
-// Test - Visual value change on click
-// google.visualization.events.addListener(chart, 'select', function () {
-//     for (var i = 0; i < data.getNumberOfRows(); i++) {
-//         if (i === chart.getSelection()[0].row) {
-//             data.setValue(i, 1, 100);
-//             console.log(i + 2);
-//         } else {
-//             data.setValue(i, 1, 0);
-//         }
-//     }
-//     chart.draw(data, options);
-// });
