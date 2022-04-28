@@ -84,13 +84,7 @@ ul {
 }
 
 footer {
+    padding-top: 2em;
     width: 100%;
-    position: absolute;
     bottom: 0;
-}
-
-@media only screen and (max-width: 768px) {
-    footer {
-        position: relative;
-    }
 }
