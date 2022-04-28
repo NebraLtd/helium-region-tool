@@ -38,7 +38,7 @@ function loadData() {
             var dataObject = JSON.parse(jsonobject);
             var countryItemString = $('#countryItem').html();
 
-            console.log("Country Data Loaded from Google Sheets CSV");
+            // console.log("Country Data Loaded from Google Sheets CSV");
 
             // Pass Helium Region data js modules
             countrySearch(dataObject, countryItemString);
@@ -187,7 +187,7 @@ function frequencyFinder() {
             }
 
             // Add Region Notes
-            console.log('Region notes', regionNotes);
+            // console.log('Region notes', regionNotes);
             if (regionNotes) {
                 $('#regionNotes').show().html('<p><strong>Notes:</strong> ' + regionNotes + '</p>');
             } else $('#regionNotes').hide();
