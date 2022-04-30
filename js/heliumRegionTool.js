@@ -5,12 +5,12 @@
 // Populate region data on DOM load
 $(function () {
     loadData();
-    $('#frequencyResults').hide();
-    $('#region1Value').hide();
-    $('#region2Value').hide();
-    $('#region3Value').hide();
+    $('#frequency-results').hide();
+    $('#region-1-value').hide();
+    $('#region-2-value').hide();
+    $('#region-3-value').hide();
     $('#purchase').hide();
-    $('#regionNotes').hide()
+    $('#region-notes').hide()
 
     // Set default country
     $('select option[value="GB"]').attr("selected", true);
@@ -36,7 +36,7 @@ function loadData() {
             var items = $.csv.toObjects(csvd);
             var jsonobject = JSON.stringify(items);
             var dataObject = JSON.parse(jsonobject);
-            var countryItemString = $('#countryItem').html();
+            var countryItemString = $('#country-item').html();
 
             // console.log("Country Data Loaded from Google Sheets CSV");
 
@@ -65,7 +65,7 @@ function countrySearch(dataObject, countryItemString) {
         countryItem.html(item.Country).val(item.Code);
 
         // Render dropdown list
-        $('#countryList').append(countryItem);
+        $('#country-list').append(countryItem);
     }
 };
 
@@ -82,7 +82,7 @@ function frequencyFinder() {
 
             // console.log("Array from frequencyFinder:", dataObject);
 
-            var v = document.getElementById("countryList");
+            var v = document.getElementById("country-list");
             var region1;
             var region2;
             var region3;
@@ -103,22 +103,22 @@ function frequencyFinder() {
             // Region error message
             if (!region1 || !region2 || !region3) {
                 // console.log('NO RESULTS!!!!');
-                var regionString = document.getElementById("regionString");
-                var regionStringHelper = document.getElementById("regionStringHelper");
+                var regionString = document.getElementById("region-string");
+                var regionStringHelper = document.getElementById("region-string-helper");
                 // Show error message
-                $('#frequencyResults').show();
-                $('#regionString').show();
+                $('#frequency-results').show();
+                $('#region-string').show();
                 regionString.innerHTML = countryName + " isn't supported yet <i class='fa-solid fa-face-frown'></i> Think it should be? Let us know <a href='mailto:support@nebra.com?subject=Helium Region Tool Suggestion'>support@nebra.com</a>";
 
                 // Clear results if previously displayed
-                document.getElementById("region1Value").innerHTML = "";
-                document.getElementById("region2Value").innerHTML = "";
-                document.getElementById("region3Value").innerHTML = "";
+                document.getElementById("region-1-value").innerHTML = "";
+                document.getElementById("region-2-value").innerHTML = "";
+                document.getElementById("region-3-value").innerHTML = "";
 
                 // Hide results
-                $('#region1Value').hide();
-                $('#region2Value').hide();
-                $('#region3Value').hide();
+                $('#region-1-value').hide();
+                $('#region-2-value').hide();
+                $('#region-3-value').hide();
             }
 
             // Region 1
@@ -130,15 +130,15 @@ function frequencyFinder() {
                 $('#purchase').show();
 
                 // Hide error message 
-                $('#regionString').hide();
+                $('#region-string').hide();
 
                 // Show results 
-                $('#region1Value').show();
-                $('#frequencyResults').show();
-                $('#frequencyResults .card ul').removeClass('d-none');
+                $('#region-1-value').show();
+                $('#frequency-results').show();
+                $('#frequency-results .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region1Value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region Frequency: <strong>" + region1 + "MHz</strong>";
+                document.getElementById("region-1-value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region Frequency: <strong>" + region1 + "MHz</strong>";
             }
 
             // Region 2
@@ -147,15 +147,15 @@ function frequencyFinder() {
             } else {
 
                 // Hide error message 
-                $('#regionString').hide();
+                $('#region-string').hide();
 
                 // Show results 
-                $('#region2Value').show();
-                $('#frequencyResults').show();
-                $('#frequencyResults .card ul').removeClass('d-none');
+                $('#region-2-value').show();
+                $('#frequency-results').show();
+                $('#frequency-results .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region2Value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 2 Frequency: <strong>" + region2 + "MHz</strong></small>";
+                document.getElementById("region-2-value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 2 Frequency: <strong>" + region2 + "MHz</strong></small>";
             }
 
             // Region 3
@@ -164,15 +164,15 @@ function frequencyFinder() {
             } else {
 
                 // Hide error message 
-                $('#regionString').hide();
+                $('#region-string').hide();
 
                 // Show results 
-                $('#region3Value').show();
-                $('#frequencyResults').show();
-                $('#frequencyResults .card ul').removeClass('d-none');
+                $('#region-3-value').show();
+                $('#frequency-results').show();
+                $('#frequency-results .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region3Value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 3 Frequency: <strong>" + region3 + "MHz</strong></small>";
+                document.getElementById("region-3-value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 3 Frequency: <strong>" + region3 + "MHz</strong></small>";
             }
 
             // Update buy button with region specific URL
@@ -189,8 +189,8 @@ function frequencyFinder() {
             // Add Region Notes
             // console.log('Region notes', regionNotes);
             if (regionNotes) {
-                $('#regionNotes').show().html('<p><strong>Notes:</strong> ' + regionNotes + '</p>');
-            } else $('#regionNotes').hide();
+                $('#region-notes').show().html('<p><strong>Notes:</strong> ' + regionNotes + '</p>');
+            } else $('#region-notes').hide();
         },
         dataType: "text",
         complete: function () {},
