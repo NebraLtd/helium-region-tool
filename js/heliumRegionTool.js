@@ -138,7 +138,7 @@ function frequencyFinder() {
                 $('#frequency-results .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region-1-value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Region Frequency: <strong>" + region1 + "MHz</strong>";
+                document.getElementById("region-1-value").innerHTML = "<i class='fa-solid fa-location-dot'></i> Main Frequency: <strong>" + region1 + "MHz</strong>";
             }
 
             // Region 2
@@ -155,7 +155,7 @@ function frequencyFinder() {
                 $('#frequency-results .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region-2-value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 2 Frequency: <strong>" + region2 + "MHz</strong></small>";
+                document.getElementById("region-2-value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Secondary Frequency: <strong>" + region2 + "MHz</strong></small>";
             }
 
             // Region 3
@@ -172,7 +172,7 @@ function frequencyFinder() {
                 $('#frequency-results .card ul').removeClass('d-none');
 
                 // Construct text
-                document.getElementById("region-3-value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Region 3 Frequency: <strong>" + region3 + "MHz</strong></small>";
+                document.getElementById("region-3-value").innerHTML = "<small><i class='fa-solid fa-location-dot'></i> Tertiary Frequency: <strong>" + region3 + "MHz</strong></small>";
             }
 
             // Update buy button with region specific URL
