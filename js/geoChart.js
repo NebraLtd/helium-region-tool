@@ -55,7 +55,7 @@ function handleQueryResponse(response) {
     var data = response.getDataTable();
 
     // Apply data to HTML element
-    var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+    var chart = new google.visualization.GeoChart(document.getElementById('regions-div'));
 
     // Render
     chart.draw(data, options);
