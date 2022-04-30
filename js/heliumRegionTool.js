@@ -176,9 +176,9 @@ function frequencyFinder() {
             }
 
             // Update buy button with region specific URL
-            if (region1 == 868) {
+            if (region1 == 864 || region1 == 868) {
                 $('#purchase').attr("href", "https://www.nebra.com/products/nebra-hnt-indoor-hotspot-miner-rock-pi-version?variant=39695017869398")
-            } else if (region1 == 915) {
+            } else if (region1 == 915 || region1 == 920 || region1 == 923) {
                 $('#purchase').attr("href", "https://www.nebra.com/products/nebra-hnt-indoor-hotspot-miner-rock-pi-version?variant=39695017902166")
             } else if (region1 == 433) {
                 $('#purchase').attr("href", "https://www.nebra.com/products/nebra-hnt-indoor-hotspot-miner-rock-pi-version?variant=39695017934934")
