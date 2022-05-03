@@ -90,9 +90,9 @@ function frequencyFinder() {
 
             for (let i = 0; i < 258; i++) {
                 if (dataObject[i].Code == v.options[v.selectedIndex].value) {
-                    region1 = dataObject[i]['Region 1 Frequency'];
-                    region2 = dataObject[i]['Region 2 Frequency'];
-                    region3 = dataObject[i]['Region 3 Frequency'];
+                    region1 = dataObject[i]['Main Frequency'];
+                    region2 = dataObject[i]['Second Frequency'];
+                    region3 = dataObject[i]['Third Frequency'];
                     regionNotes = dataObject[i]['Notes'];
 
                     countryName = dataObject[i].Country;
