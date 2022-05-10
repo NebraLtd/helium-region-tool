@@ -28,7 +28,6 @@ var url = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRk6K2cxRqwpoc7IXepVE
 // Load data from Google Sheets
 function loadData() {
 
-    // Render the country selection list from the CSV data
     $.ajax({
         url: url,
         async: false,
@@ -38,11 +37,8 @@ function loadData() {
             var dataObject = JSON.parse(jsonobject);
             var countryItemString = $('#country-item').html();
 
-            // console.log("Country Data Loaded from Google Sheets CSV");
-
             // Pass Helium Region data js modules
             countrySearch(dataObject, countryItemString);
-            // countrySearch(dataObject, countryItemString);
         },
         dataType: "text",
         complete: function () {},
@@ -52,6 +48,7 @@ function loadData() {
     });
 };
 
+// Render the country selection list from the CSV data
 function countrySearch(dataObject, countryItemString) {
     // Loop through each country item and build template variables
     dataObject.forEach(buildNewList);
@@ -79,9 +76,6 @@ function frequencyFinder() {
             var items = $.csv.toObjects(csvd);
             var jsonobject = JSON.stringify(items);
             var dataObject = JSON.parse(jsonobject);
-
-            // console.log("Array from frequencyFinder:", dataObject);
-
             var v = document.getElementById("country-list");
             var region1;
             var region2;
@@ -102,9 +96,9 @@ function frequencyFinder() {
 
             // Region error message
             if (!region1 || !region2 || !region3) {
-                // console.log('NO RESULTS!!!!');
                 var regionString = document.getElementById("region-string");
                 var regionStringHelper = document.getElementById("region-string-helper");
+
                 // Show error message
                 $('#frequency-results').show();
                 $('#region-string').show();
@@ -122,9 +116,7 @@ function frequencyFinder() {
             }
 
             // Region 1
-            if (region1.length === 0) {
-
-            } else {
+            if (region1.length === 0) {} else {
 
                 // Show buy button
                 $('#purchase').show();
@@ -187,7 +179,6 @@ function frequencyFinder() {
             }
 
             // Add Region Notes
-            // console.log('Region notes', regionNotes);
             if (regionNotes) {
                 $('#region-notes').show().html('<p><strong>Notes:</strong> ' + regionNotes + '</p>');
             } else $('#region-notes').hide();
